@@ -13,8 +13,7 @@ for col in df.columns:
     print('{} - {}%'.format(col,point_missing))
 
 
-#checking datatypes for the columns:
-print(df.dtypes)
+
 
 #replacing the nan column in budget and gross
 df['budget'] = df['budget'].fillna(0)
@@ -24,7 +23,10 @@ df['gross']= df['gross'].fillna(0)
 
 df['budget'] = df['budget'].astype('int64')
 df['gross'] = df['gross'].astype('int64')
+
+#checking datatypes for the columns:
 print(df.dtypes)
+
 
 
 #release date parsing
@@ -52,9 +54,19 @@ for col in df.columns:
     
 
 
+#checking for descriptive function in the dataframe
+import outlier as ot
+descriptive_stat = ot.custom_summary(df)
+print(descriptive_stat)
+
+
+
+
+
+
 #checking the final df
 print(df)
 
-df.to_csv('cleaned_movie_data.csv',index=False)
+#df.to_csv('cleaned_movie_data.csv',index=False)
 
 
