@@ -67,6 +67,6 @@ print(descriptive_stat)
 #checking the final df
 print(df)
 
-#df.to_csv('cleaned_movie_data.csv',index=False)
+df.to_csv('cleaned_movie_data.csv',index=False)
 
 
